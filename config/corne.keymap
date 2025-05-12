@@ -13,6 +13,36 @@
 &led_strip { chain-length = <27>; };
 
 / {
+    macros {
+        copy: ctrlc_ctrlv {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp C>;
+            label = "CTRLC_CTRLV";
+        };
+
+        paste: paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp V>;
+            label = "PASTE";
+        };
+
+        copy_term: copy_term {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp LEFT_SHIFT &kp C>;
+            label = "COPY_TERM";
+        };
+
+        paste_term: paste_term {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp LEFT_SHIFT &kp V>;
+            label = "PASTE_TERM";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
