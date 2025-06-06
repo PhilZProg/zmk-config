@@ -53,7 +53,7 @@
         nvim_pfromplus: nvim_pfromplus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp R &kp PLUS>;
+            bindings = <&kp I &kp LCTRL &kp R &kp PLUS>;
             label = "NVIM_PFROMPLUS";
         };
     };
