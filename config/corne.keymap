@@ -42,6 +42,20 @@
             bindings = <&kp LCTRL &kp LEFT_SHIFT &kp V>;
             label = "PASTE_TERM";
         };
+
+        nvim_ytoplus: nvim_ytoplus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp PLUS &kp Y>;
+            label = "NVIM_YTOPLUS";
+        };
+
+        nvim_pfromplus: nvim_pfromplus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp R &kp PLUS>;
+            label = "NVIM_PFROMPLUS";
+        };
     };
 
     keymap {
@@ -70,10 +84,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7       &kp N8    &kp N9     &kp N0  &kp BSPC
-&kp LSHFT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN     &kp UP    &kp RIGHT  &trans  &trans
-&kp LCTRL  &bt BT_CLR    &out OUT_TOG  &copy         &copy_term    &trans          &trans    &paste_term  &paste    &trans     &trans  &trans
-                                       &kp LGUI      &trans        &kp SPACE       &kp RET   &mo 3        &kp RALT
+&kp TAB    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5           &kp N6           &kp N7       &kp N8    &kp N9     &kp N0  &kp BSPC
+&kp LSHFT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &kp LEFT         &kp DOWN     &kp UP    &kp RIGHT  &trans  &trans
+&kp LCTRL  &bt BT_CLR    &out OUT_TOG  &copy         &copy_term    &nvim_ytoplus    &nvim_pfromplus  &paste_term  &paste    &trans     &trans  &trans
+                                       &kp LGUI      &trans        &kp SPACE        &kp RET          &mo 3        &kp RALT
             >;
         };
 
